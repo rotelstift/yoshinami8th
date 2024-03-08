@@ -11,15 +11,16 @@ import { Observable } from 'rxjs';
 })
 @Injectable({providedIn: 'root'})
 export class HelloComponent {
-  constructor(private http: HttpClient) {
-    this.getAnswer()
-  }
+  constructor(private http: HttpClient) {}
   hello_world: Answer | undefined;
   getAnswer() {
     this.http.get<Answer>('http://0.0.0.0:3050/').subscribe(answer =>{
       console.log(answer)
       this.hello_world = answer
     })
+  }
+  ngOnInit() : void {
+    this.getAnswer()
   }
 }
 
