@@ -1,0 +1,40 @@
+services:
+
+  frontend:
+    build: ./angular
+    container_name: frontend
+    command: npm run start
+    ports:
+      - '4200:4200'
+    volumes:
+      - ./angular:/app
+    environment:
+      - NODE_ENV=development
+
+  backend:
+    build: ./rails
+    container_name: backend
+    command: ./bin/rails s -b 0.0.0.0 -p 3050
+    ports:
+      - '3050:3050'
+    depends_on:
+      - db
+    volumes:
+      - ./rails:/app
+      - bundle:/usr/local/bundle
+      - db_data:/var/lib/postgresql/data
+    environment:
+      - RAILS_ENV=development
+
+  db:
+    image: postgres:latest
+    container_name: db
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=password
+    ports:
+      - '5432'
+
+volumes:
+  db_data:
+  bundle:
