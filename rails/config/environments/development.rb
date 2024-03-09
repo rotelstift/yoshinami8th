@@ -68,4 +68,7 @@ Rails.application.configure do
 
   # Raise error when a before_action's only/except options reference missing actions
   config.action_controller.raise_on_missing_callback_actions = true
+
+  Rails.application.routes.default_url_options[:host] = '0.0.0.0'
+  Rails.application.routes.default_url_options[:port] = 3050
 end

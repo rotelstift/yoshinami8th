@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  scope :api do
+    resources :articles
+  end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   get '/' => "hello#index"
