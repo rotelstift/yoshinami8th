@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  footer {
+    @apply fixed bottom-0 w-full text-center
+  }
+}
