@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { ArticleService } from '../article.service';
-import { FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-article-editor',
@@ -12,12 +11,11 @@ import { FormBuilder } from '@angular/forms';
 export class ArticleEditorComponent {
 
   constructor(
-    private articleService: ArticleService,
-    private formBuilder: FormBuilder
+    private articleService: ArticleService
   ) {}
 
   submitArticle(event: Event) {
-    // event.preventDefault()
+    event.preventDefault()
     const form = event.target as HTMLFormElement
     const form_data = new FormData(form)
 
