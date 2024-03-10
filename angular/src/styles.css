@@ -4,14 +4,17 @@
 @tailwind utilities;
 
 @layer base {
-  h1 {
-    @apply text-2xl text-blue-800;
+  body {
+    @apply bg-gray-300 -z-50
   }
+}
+
+@layer utilities {
   /* icon settings */
   i.icon-menu {
-    @apply inline-block w-8 h-8 bg-icon-menu bg-contain
+    @apply inline-block w-10 h-10 bg-icon-menu bg-contain
   }
   i.icon-close {
-    @apply inline-block w-8 h-8 bg-icon-close bg-contain
+    @apply inline-block w-10 h-10 bg-icon-close bg-contain
   }
 }
