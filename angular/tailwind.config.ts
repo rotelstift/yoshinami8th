@@ -5,7 +5,12 @@ const config: Config = {
     './src/**/*.{html, ts}'
   ],
   theme: {
-    extend: {},
+    extend: {
+      backgroundImage: {
+        'icon-menu': "url('assets/ionicons/menu.svg')",
+        'icon-close': "url('assets/ionicons/close.svg')"
+      }
+    },
   },
   plugins: [],
 }
