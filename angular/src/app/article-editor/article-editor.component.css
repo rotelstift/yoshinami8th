@@ -4,7 +4,7 @@
 
 @layer components {
   form {
-    @apply flex flex-col bg-gray-100 p-4
+    @apply flex flex-col bg-gray-100 p-4 sm:px-48
   }
   input#title {
     @apply rounded-lg border-2 border-gray-800 text-2xl
