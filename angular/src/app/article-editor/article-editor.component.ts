@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ArticleService } from '../article.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-article-editor',
@@ -14,7 +15,8 @@ export class ArticleEditorComponent {
   image_src: string | ArrayBuffer | null = ''
 
   constructor(
-    private articleService: ArticleService
+    private articleService: ArticleService,
+    private router: Router
   ) {}
 
   submitArticle(event: Event) {
@@ -25,7 +27,9 @@ export class ArticleEditorComponent {
     this.articleService.postArticleFormData(form_data).subscribe({
       next: (response) => console.log(response),
       error: (error) => console.error(error),
-      complete: () => console.info('complete')
+      complete: () => {
+        this.router.navigate(['/'])
+      }
     })
   }
 
