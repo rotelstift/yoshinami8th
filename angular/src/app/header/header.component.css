@@ -7,13 +7,13 @@
     @apply fixed w-full h-16 bg-zinc-300 z-50 sm:h-28
   }
   h1 {
-    @apply text-4xl font-thin p-2 tracking-wider sm:text-7xl sm:tracking-widest
+    @apply text-4xl font-thin px-3 py-2 tracking-wider sm:text-7xl sm:tracking-widest
   }
 }
 
 @layer utilities {
   #menu-button {
-    @apply fixed top-2 right-4 items-center justify-center
+    @apply fixed top-2 right-4 items-center justify-center sm:hidden
   }
   #menu-open {
     @apply group-focus-within:hidden
