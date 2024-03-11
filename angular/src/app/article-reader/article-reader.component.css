@@ -16,7 +16,7 @@
     @apply text-2xl text-center sm:place-self-center sm:text-4xl
   }
   section.body_text {
-    @apply bg-zinc-100 sm:row-span-2 p-4
+    @apply bg-zinc-100 p-2 sm:row-span-2 sm:p-4
   }
   section.body_text h3 {
     @apply text-center
