@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  div.canvas {
+    @apply sm:grid sm:grid-cols-2
+  }
+  p.picture_flame {
+    @apply sm:place-self-end
+  }
+  div.text_flame {
+    @apply sm:grid sm:grid-rows-3 sm:px-6
+  }
+  h2.article_title {
+    @apply text-2xl text-center sm:place-self-center sm:text-4xl
+  }
+  section.body_text {
+    @apply bg-zinc-100 p-2 sm:row-span-2 sm:p-4
+  }
+  section.body_text h3 {
+    @apply text-center
+  }
+}
+
+@layer components {
+  p.picture_flame {
+    @apply sm:max-w-96
+  }
+  p.picture_flame img {
+    @apply w-full object-contain pt-3
+  }
+}
