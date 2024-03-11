@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  footer {
+    @apply fixed bottom-0 w-full h-24 text-center bg-zinc-300
+  }
+}
+
+@layer components {
+  p#by_name {
+    @apply py-3
+  }
+  nav#sns {
+    @apply w-1/2 mx-auto
+  }
+  nav#sns ul {
+    @apply grid grid-cols-2 gap-4
+  }
+}
+
+@layer utilities {
+  i#link_pixiv {
+    @apply w-8 h-8
+  }
+  i#link_x {
+    @apply w-8 h-8
+  }
+}
