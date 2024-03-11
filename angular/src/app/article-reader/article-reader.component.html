@@ -1,7 +1,7 @@
 <article *ngFor="let article of articles">
-  <p><img src="{{article.image_url}}"></p>
-  <h2>{{article.title}}</h2>
-  <section>
+  <p class="picture_flame"><img src="{{article.image_url}}"></p>
+  <h2 class="article_title">{{article.title}}</h2>
+  <section class="body_text">
     <h3>{{article.created_at}}</h3>
     {{article.body_text}}
   </section>

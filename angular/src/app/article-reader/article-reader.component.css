@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  h2.article_title {
+    @apply text-center
+  }
+  section.body_text {
+    @apply bg-zinc-100
+  }
+  section.body_text h3 {
+    @apply text-center
+  }
+}
+
+@layer components {
+  p.picture_flame img {
+    @apply w-full object-contain pt-3
+  }
+}
