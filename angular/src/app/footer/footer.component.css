@@ -4,6 +4,6 @@
 
 @layer base {
   footer {
-    @apply fixed bottom-0 w-full text-center
+    @apply fixed bottom-0 w-full h-24 text-center bg-gray-300
   }
 }
