@@ -4,7 +4,7 @@
 
 @layer base {
   div.canvas {
-    @apply sm:grid sm:grid-cols-2
+    @apply pt-7 sm:grid sm:grid-cols-2 sm:pt-10
   }
   p.picture_flame {
     @apply sm:place-self-end
@@ -28,6 +28,6 @@
     @apply sm:max-w-96
   }
   p.picture_flame img {
-    @apply w-full object-contain pt-3
+    @apply w-full object-contain
   }
 }
