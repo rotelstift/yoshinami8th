@@ -9,10 +9,19 @@
   input#title {
     @apply rounded-lg border-2 border-gray-800 text-2xl
   }
-  button {
-    @apply rounded-lg bg-gray-800 text-gray-100
+  button#select_image {
+    @apply rounded-lg bg-gray-800 text-gray-100 text-2xl
   }
   input#image {
     @apply hidden
+  }
+  p#image_thumbnail img {
+    @apply w-full max-h-96 object-contain
+  }
+  textarea#body_text {
+    @apply rounded-lg border-2 border-gray-800 h-64
+  }
+  button#article_submit {
+    @apply rounded-lg bg-gray-800 text-gray-100 text-2xl mt-4
   }
 }
