@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild, viewChild } from '@angular/core';
 import { ArticleService } from '../article.service';
 
 @Component({
@@ -24,5 +24,9 @@ export class ArticleEditorComponent {
       error: (error) => console.error(error),
       complete: () => console.info('complete')
     })
+  }
+
+  selectImage(input: HTMLInputElement): void {
+    input.click()
   }
 }
