@@ -4,6 +4,6 @@
 
 @layer base {
   main {
-    @apply p-0
+    @apply p-0 relative top-16
   }
 }
