@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ArticleService, Article } from '../article.service';
+import { LazyLoadImageDirective } from '../lazy-load-image.directive';
 
 @Component({
   selector: 'app-article-reader',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, LazyLoadImageDirective],
   templateUrl: './article-reader.component.html',
   styleUrl: './article-reader.component.css'
 })
