@@ -1,1 +1,8 @@
-<p>article-reader works!</p>
+<article *ngFor="let article of articles">
+  <p><img src="{{article.image_url}}"></p>
+  <h2>{{article.title}}</h2>
+  <section>
+    <h3>{{article.created_at}}</h3>
+    {{article.body_text}}
+  </section>
+</article>
