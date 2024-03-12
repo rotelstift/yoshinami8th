@@ -3,10 +3,16 @@
 @tailwind utilities;
 
 @layer base {
+  article {
+    @apply empty:hidden
+  }
   .gallery {
-    @apply sm:flex sm:flex-row
+    @apply divide-y
   }
   .canvas {
-    @apply pt-10 text-center sm:min-w-96 sm:mx-48
+    @apply pt-10 text-center sm:max-w-96 sm:mx-auto
+  }
+  p.date {
+    @apply h-12
   }
 }
