@@ -13,18 +13,9 @@
     @apply py-3
   }
   nav#sns {
-    @apply w-1/2 mx-auto
+    @apply w-1/2 mx-auto py-3
   }
   nav#sns ul {
     @apply grid grid-cols-2 gap-4
-  }
-}
-
-@layer utilities {
-  i#link_pixiv {
-    @apply w-7 h-7
-  }
-  i#link_x {
-    @apply w-7 h-7
   }
 }
