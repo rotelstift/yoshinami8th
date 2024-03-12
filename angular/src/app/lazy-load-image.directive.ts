@@ -21,7 +21,7 @@ export class LazyLoadImageDirective {
   private lazyLoadImage() {
     const observerOptions = {
       root: null, // ビューポートを基準とする
-      rootMargin: '-64px', // 要素がビューポートの境界に達する前にロードを開始したい場合は、ここを調整する
+      rootMargin: '64px', // 要素がビューポートの境界に達する前にロードを開始したい場合は、ここを調整する
       threshold: 0.01 // 1%でも要素がビューポートに入ったらトリガーする
     };
   
