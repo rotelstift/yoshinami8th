@@ -3,11 +3,11 @@
 @tailwind utilities;
 
 @layer base {
+  #gallery {
+    @apply divide-y-2 divide-dotted divide-zinc-600
+  }
   article {
     @apply empty:hidden
-  }
-  .gallery {
-    @apply divide-y
   }
   .canvas {
     @apply pt-10 text-center sm:max-w-96 sm:mx-auto

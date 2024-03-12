@@ -1,4 +1,4 @@
-<div class="gallery">
+<div id="gallery">
   <article *ngFor="let article of articles">
     <div class="canvas" *ngIf="article.image_url">
       <p class="picture_flame"><img appLazyLoadImage [src]="article.image_url"></p>
