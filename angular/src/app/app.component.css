@@ -4,6 +4,6 @@
 
 @layer base {
   main {
-    @apply p-0 relative top-16 pb-24 sm:top-28 sm:w-5/6
+    @apply p-0 relative top-16 pb-24 sm:top-28 sm:w-5/6 sm:m-auto
   }
 }

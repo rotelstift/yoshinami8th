@@ -1,6 +1,15 @@
 <article *ngFor="let article of articles">
-  <div class="canvas" *ngIf="article.body_text || article.image_url">
+  <div class="canvas" *ngIf="article.image_url">
     <p class="picture_flame"><img appLazyLoadImage [src]="article.image_url"></p>
+    <div class="text_flame">
+      <h2 class="article_title">{{article.title}}</h2>
+      <section class="body_text">
+        <h3>{{rewriteDateString(article.created_at)}}</h3>
+        {{article.body_text}}
+      </section>
+    </div>
+  </div>
+  <div class="text_canvas" *ngIf="!article.image_url && article.body_text">
     <div class="text_flame">
       <h2 class="article_title">{{article.title}}</h2>
       <section class="body_text">
