@@ -3,14 +3,17 @@
 @tailwind utilities;
 
 @layer base {
-  div.canvas {
-    @apply pt-7 sm:grid sm:grid-cols-2 sm:pt-10
+  #articles {
+    @apply divide-y-2 divide-zinc-600 divide-dotted
+  }
+  article {
+    @apply py-3 empty:hidden sm:py-5
+  }
+  .canvas {
+    @apply sm:grid sm:grid-cols-2
   }
   p.picture_flame {
     @apply sm:place-self-end
-  }
-  div.text_canvas {
-    @apply pt-7 sm:pt-10
   }
   .canvas div.text_flame {
     @apply sm:grid sm:grid-rows-3 sm:px-6 sm:max-w-96
