@@ -27,8 +27,4 @@ export class ArticleReaderComponent {
       complete: () => console.log('complete')
     })
   }
-
-  rewriteDateString(string: string): string {
-    return new Date(Date.parse(string)).toLocaleDateString('ja-JP', {year: 'numeric', month: '2-digit', day: '2-digit'})
-  }
 }

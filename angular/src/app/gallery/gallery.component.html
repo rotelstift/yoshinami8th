@@ -2,7 +2,7 @@
   <article *ngFor="let article of articles">
     <div class="canvas" *ngIf="article.image_url">
       <p class="picture_flame"><img appLazyLoadImage [src]="article.image_url"></p>
-      <p class="date">{{rewriteDateString(article.created_at)}}</p>
+      <p class="date">{{article.created_at | date: 'YYYY/MM/dd'}}</p>
     </div>
   </article>  
 </div>
