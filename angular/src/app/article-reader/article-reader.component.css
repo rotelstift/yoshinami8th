@@ -15,9 +15,6 @@
   p.picture_flame {
     @apply sm:place-self-end
   }
-  /* .text_canvas {
-    @apply pt-7 sm:pt-10
-  } */
   .canvas div.text_flame {
     @apply sm:grid sm:grid-rows-3 sm:px-6 sm:max-w-96
   }
