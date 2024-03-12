@@ -5,8 +5,8 @@
       <div class="text_flame">
         <h2 class="article_title">{{article.title}}</h2>
         <section class="body_text">
-          <h3>{{rewriteDateString(article.created_at)}}</h3>
-          {{article.body_text}}
+          <h3>{{article.created_at | date: 'YYYY/MM/dd'}}</h3>
+          <div [innerHTML]="article.body_text | newlineToParagraph"></div>
         </section>
       </div>
     </div>
@@ -14,8 +14,8 @@
       <div class="text_flame">
         <h2 class="article_title">{{article.title}}</h2>
         <section class="body_text">
-          <h3>{{rewriteDateString(article.created_at)}}</h3>
-          {{article.body_text}}
+          <h3>{{article.created_at | date: 'YYYY/MM/dd'}}</h3>
+          <div [innerHTML]="article.body_text | newlineToParagraph"></div>
         </section>
       </div>
     </div>
