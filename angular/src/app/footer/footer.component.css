@@ -22,9 +22,9 @@
 
 @layer utilities {
   i#link_pixiv {
-    @apply w-8 h-8
+    @apply w-7 h-7
   }
   i#link_x {
-    @apply w-8 h-8
+    @apply w-7 h-7
   }
 }
