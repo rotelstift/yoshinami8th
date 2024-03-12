@@ -16,7 +16,7 @@
     @apply sm:place-self-end
   }
   .canvas div.text_flame {
-    @apply sm:grid sm:grid-rows-3 sm:px-6 sm:max-w-96
+    @apply sm:grid sm:grid-rows-3 sm:pl-6 sm:max-w-96
   }
   .text_canvas div.text_flame {
     @apply sm:col-span-2
