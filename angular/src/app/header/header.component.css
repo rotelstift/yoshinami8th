@@ -22,7 +22,7 @@
     @apply flex flex-col text-center text-2xl bg-zinc-100
            fixed w-full -top-28 right-0 group-focus-within:top-0
            transition-all duration-500
-           divide-y
+           divide-y-2 divide-dotted divide-zinc-600
            sm:flex-row sm:static sm:bg-zinc-300 sm:divide-none
   }
   #menu li {
