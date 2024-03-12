@@ -6,7 +6,7 @@
         <h2 class="article_title">{{article.title}}</h2>
         <section class="body_text">
           <h3>{{article.created_at | date: 'YYYY/MM/dd'}}</h3>
-          {{article.body_text}}
+          <div [innerHTML]="article.body_text | newlineToParagraph"></div>
         </section>
       </div>
     </div>
@@ -15,7 +15,7 @@
         <h2 class="article_title">{{article.title}}</h2>
         <section class="body_text">
           <h3>{{article.created_at | date: 'YYYY/MM/dd'}}</h3>
-          {{article.body_text}}
+          <div [innerHTML]="article.body_text | newlineToParagraph"></div>
         </section>
       </div>
     </div>
