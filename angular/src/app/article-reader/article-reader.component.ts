@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ArticleService, Article } from '../article.service';
 import { LazyLoadImageDirective } from '../lazy-load-image.directive';
-import { NewlineToParagraphPipe } from '../newline-to-paragraph.pipe';
+import { MarkdownPipe } from '../markdown.pipe';
 
 @Component({
   selector: 'app-article-reader',
@@ -10,7 +10,7 @@ import { NewlineToParagraphPipe } from '../newline-to-paragraph.pipe';
   imports: [
     CommonModule,
     LazyLoadImageDirective,
-    NewlineToParagraphPipe
+    MarkdownPipe
   ],
   templateUrl: './article-reader.component.html',
   styleUrl: './article-reader.component.css'
