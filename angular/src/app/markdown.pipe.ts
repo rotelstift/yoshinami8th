@@ -1,4 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
+import { marked } from 'marked';
 
 @Pipe({
   name: 'markdown',
@@ -6,8 +7,13 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class MarkdownPipe implements PipeTransform {
 
-  transform(value: unknown, ...args: unknown[]): unknown {
-    return null;
+  constructor() {
+    marked.use({async: true})
   }
 
+  transform(raw_markdown: string) {
+    return new Promise<string>((resolve, _reject) => {
+      resolve(marked.parse(raw_markdown))
+    })
+  }
 }
