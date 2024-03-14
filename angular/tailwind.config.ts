@@ -21,9 +21,11 @@ const config: Config = {
         'accent': zinc[800]
       },
       spacing: {
-        'sm': "12px",
-        'md': "20px",
-        'lg': "32px"
+        'sm': '1rem', // 16px
+        'md': '1.5rem', // 24px
+        'lg': '2rem', // 32px
+        'xl': '4rem', // 64px
+        '2xl': '6rem', // 96px
       }
     },
   },
