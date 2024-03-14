@@ -21,6 +21,7 @@ const config: Config = {
         'accent': zinc[800]
       },
       spacing: {
+        'xs': '0.5rem', // 8px
         'sm': '1rem', // 16px
         'md': '1.5rem', // 24px
         'lg': '2rem', // 32px
