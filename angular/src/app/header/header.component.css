@@ -4,6 +4,6 @@
 
 @layer utilities {
   #menu i {
-    @apply w-5 h-5
+    @apply size-7 align-text-bottom
   }
 }
