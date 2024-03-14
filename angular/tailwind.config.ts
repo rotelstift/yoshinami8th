@@ -19,6 +19,11 @@ const config: Config = {
         'base': zinc[300],
         'assort': zinc[600],
         'accent': zinc[800]
+      },
+      spacing: {
+        'sm': "12px",
+        'md': "20px",
+        'lg': "32px"
       }
     },
   },
