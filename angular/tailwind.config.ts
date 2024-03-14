@@ -17,7 +17,7 @@ const config: Config = {
       },
       colors: {
         'base': zinc[300],
-        'assort': zinc[600],
+        'assort': zinc[100],
         'accent': zinc[800]
       },
       spacing: {
