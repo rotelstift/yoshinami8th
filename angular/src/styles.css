@@ -5,7 +5,7 @@
 
 @layer base {
   body {
-    @apply text-zinc-800 bg-zinc-300 -z-50 font-mono
+    @apply text-accent bg-base -z-50 font-mono
   }
 }
 
