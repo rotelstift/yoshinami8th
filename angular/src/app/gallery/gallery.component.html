@@ -1,6 +1,6 @@
-<div id="gallery">
+<div id="gallery" class="divide-y-2 divide-dotted divide-accent">
   <article *ngFor="let article of articles">
-    <div class="canvas" *ngIf="article.image_url">
+    <div *ngIf="article.image_url" class="pt-lg text-center sm:max-w-96 sm:mx-auto">
       <p class="picture_flame"><img appLazyLoadImage [src]="article.image_url"></p>
       <p class="date">{{article.created_at | date: 'YYYY/MM/dd'}}</p>
     </div>
