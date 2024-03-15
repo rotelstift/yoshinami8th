@@ -1,21 +1,21 @@
-<div id="articles" class="divide-y-2 divide-accent divide-dotted">
+<div class="divide-y-2 divide-accent divide-dotted">
   <article *ngFor="let article of articles" class="py-sm empty:hidden sm:py-lg">
-    <div *ngIf="article.image_url" class="canvas sm:grid sm:grid-cols-2 sm:gap-sm">
-      <p class="picture_flame sm:max-w-96 sm:place-self-center">
+    <div *ngIf="article.image_url" class="sm:grid sm:grid-cols-2 sm:gap-sm">
+      <p class="sm:max-w-96 sm:place-self-center">
         <img appLazyLoadImage [src]="article.image_url" class="w-full object-contain">
       </p>
-      <div class="text_flame sm:flex sm:flex-col sm:max-w-96">
-        <h2 class="article_title text-2xl text-center sm:py-md sm:place-self-center sm:text-4xl">{{article.title}}</h2>
-        <section class="body_text bg-assort p-xs sm:h-full sm:p-sm">
+      <div class="sm:flex sm:flex-col sm:max-w-96">
+        <h2 class="text-2xl text-center sm:py-md sm:place-self-center sm:text-4xl">{{article.title}}</h2>
+        <section class="bg-assort p-xs sm:h-full sm:p-sm">
           <h3 class="text-center">{{article.created_at | date: 'YYYY/MM/dd'}}</h3>
           <div [innerHTML]="article.body_text | markdown | async"></div>
         </section>
       </div>
     </div>
-    <div class="text_canvas" *ngIf="!article.image_url && article.body_text">
-      <div class="text_flame sm:grid sm:gap-sm">
-        <h2 class="article_title  text-2xl text-center sm:place-self-center sm:text-4xl">{{article.title}}</h2>
-        <section class="body_text bg-assort p-xs sm:p-sm">
+    <div *ngIf="!article.image_url && article.body_text">
+      <div class="sm:grid sm:gap-sm">
+        <h2 class="text-2xl text-center sm:place-self-center sm:text-4xl">{{article.title}}</h2>
+        <section class="bg-assort p-xs sm:p-sm">
           <h3 class="text-center">{{article.created_at | date: 'YYYY/MM/dd'}}</h3>
           <div [innerHTML]="article.body_text | markdown | async"></div>
         </section>
