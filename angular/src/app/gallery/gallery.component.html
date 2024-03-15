@@ -1,7 +1,9 @@
 <div id="gallery" class="divide-y-2 divide-dotted divide-accent">
-  <article *ngFor="let article of articles">
-    <div *ngIf="article.image_url" class="pt-lg text-center sm:max-w-96 sm:mx-auto">
-      <p class="picture_flame"><img appLazyLoadImage [src]="article.image_url"></p>
+  <article *ngFor="let article of articles" class="empty:hidden">
+    <div *ngIf="article.image_url" class="py-lg text-center">
+      <p class="picture_flame sm:grid sm:justify-items-center">
+        <img appLazyLoadImage [src]="article.image_url" class="sm:max-w-[38rem] sm:max-h-[38rem]">
+      </p>
       <p class="date">{{article.created_at | date: 'YYYY/MM/dd'}}</p>
     </div>
   </article>  
