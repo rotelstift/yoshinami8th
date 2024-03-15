@@ -1,12 +1,23 @@
-<header>
-  <h1>yoshinami8th.net</h1>
+<header class="fixed w-full h-xl bg-base z-50 sm:h-fit">
+  <h1 class="text-4xl font-thin px-sm py-xs tracking-wider sm:text-7xl sm:tracking-widest">yoshinami8th.net</h1>
   <nav class="group">
-    <button id="menu-button">
-      <i class="icon-menu" id="menu-open"></i> 
+    <button class="fixed top-xs right-sm items-center justify-center bg-base sm:hidden">
+      <i class="icon-menu group-focus-within:hidden"></i> 
     </button>
-    <ul id="menu">
+    <!-- 
+      スマホ版では Tailwind CSS のみで動くメニューを実装する
+      メニューが出てない時は -top で上方向にメニューをずらして隠し、
+      group-focus-within:でボタンにフォーカスが当たったときに下にずらす
+      なので親要素 nav の class="group" は消さないし、他では使わないこと
+    -->
+    <ul class="grid grid-rows-4 w-full h-36 text-center text-2xl bg-assort
+              fixed -top-36 right-0 group-focus-within:top-0 transition-all duration-500
+              divide-y-2 divide-dotted divide-accent
+              sm:grid-rows-1 sm:grid-cols-4 sm:h-fit sm:py-xs sm:static sm:bg-base sm:divide-none
+              [&_i]:size-7 [&_i]:align-text-bottom">
       <li><a href="/"><i class="icon-home"></i>Home</a></li>
       <li><a href="/gallery"><i class="icon-color-palette"></i>Gallery</a></li>
+      <li><a href="/info"><i class="icon-information-circle"></i>Information</a></li>
       <li><i class="icon-person"></i>Profile</li>
     </ul>
   </nav>

@@ -5,12 +5,12 @@
 
 @layer base {
   body {
-    @apply text-zinc-800 bg-zinc-300 -z-50 font-mono
+    @apply text-accent bg-base -z-50
   }
 }
 
-@layer utilities {
-  /* icon settings */
+@layer components {
+  /* icon component */
   i.icon-menu {
     @apply inline-block w-10 h-10 bg-icon-menu bg-contain
   }
@@ -25,5 +25,11 @@
   }
   i.icon-person {
     @apply inline-block w-10 h-10 bg-icon-person bg-contain
+  }
+  i.icon-information-circle {
+    @apply inline-block w-10 h-10 bg-icon-information-circle bg-contain
+  }
+  button, button[type="submit"] {
+    @apply rounded-lg bg-accent text-assort text-2xl
   }
 }
