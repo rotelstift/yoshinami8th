@@ -29,6 +29,9 @@
   i.icon-information-circle {
     @apply inline-block w-10 h-10 bg-icon-information-circle bg-contain
   }
+  i.icon-trash {
+    @apply inline-block w-10 h-10 bg-icon-trash bg-contain
+  }
   button, button[type="submit"] {
     @apply rounded-lg bg-accent text-assort text-2xl
   }
