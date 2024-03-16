@@ -1,0 +1,25 @@
+<h2 class="text-xl text-center">Tag Edit</h2>
+
+<article class="grid grid-flow-row gap-xs p-sm [&_i]:size-5 [&_i]:align-text-bottom">
+  <p *ngFor="let tag of tags">
+    {{tag.name}} : {{tag.slug}} <i (click)="deleteTag(tag.id)" class="icon-trash"></i>
+  </p>
+</article>
+
+<article class="grid grid-flow-row gap-xs p-sm">
+  <p *ngFor="let error of errors | keyvalue"
+    class="text-red-700">
+    {{error.key}} : {{error.value}}
+  </p>
+</article>
+
+
+<form
+  (submit)="onSubmit($event)"
+  class="grid grid-flow-row gap-sm px-sm">
+  <label for="tag_name">Tag Name</label>
+  <input type="text" id="tag_name" name="tag[name]">
+  <label for="slug">Slug</label>
+  <input type="text" id="slug" name="tag[slug]">
+  <button type="submit">Submit</button>
+</form>

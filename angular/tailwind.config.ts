@@ -14,7 +14,8 @@ const config: Config = {
         'icon-person': "url('assets/ionicons/person.svg')",
         'icon-home': "url('assets/ionicons/home.svg')",
         'icon-color-palette': "url('assets/ionicons/color-palette.svg')",
-        'icon-information-circle': "url('assets/ionicons/information-circle.svg')"
+        'icon-information-circle': "url('assets/ionicons/information-circle.svg')",
+        'icon-trash': "url('assets/ionicons/trash.svg')"
       },
       colors: {
         'base': zinc[300],

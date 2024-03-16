@@ -71,8 +71,8 @@ export class ArticleEditorComponent {
     if (this.entity_status && /^\d+$/.test(this.entity_status)) {
       this.articleService.updateArticleData(this.entity_status, form_data).subscribe({
         next: (response) => console.log(response),
-      error: (error) => console.error(error),
-      complete: () => {
+        error: (error) => console.error(error),
+        complete: () => {
         this.router.navigate(['/'])
       }
       })
