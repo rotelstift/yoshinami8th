@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { ArticleService, Article } from '../article.service';
 import { LazyLoadImageDirective } from '../lazy-load-image.directive';
 import { MarkdownPipe } from '../markdown.pipe';
+import { AdminLinkComponent } from '../admin-link/admin-link.component';
 
 @Component({
   selector: 'app-article-reader',
@@ -10,7 +11,8 @@ import { MarkdownPipe } from '../markdown.pipe';
   imports: [
     CommonModule,
     LazyLoadImageDirective,
-    MarkdownPipe
+    MarkdownPipe,
+    AdminLinkComponent
   ],
   templateUrl: './article-reader.component.html',
   styleUrl: './article-reader.component.css'

@@ -1,12 +1,34 @@
-<form id="article_form" (submit)="submitArticle($event)" class="grid grid-flow-row gap-xs bg-assort p-sm sm:px-auto">
+<form 
+  id="article_form" 
+  [formGroup]="article_form"
+  (submit)="onSubmit($event)" 
+  class="grid grid-flow-row gap-xs bg-assort p-sm sm:px-auto"
+>
   <label for="title">Title</label>
-  <input type="text" id="title" name="article[title]" class="rounded-lg border-2 border-accent text-2xl">
+  <input 
+    type="text" 
+    id="title" 
+    formControlName="title" 
+    class="rounded-lg border-2 border-accent text-2xl"
+  >
   <label for="image">Image</label>
   <button form="image" (click)="selectImage(imageInput)">ファイルを選択</button>
-  <input type="file" id="image" name="article[image]" accept="image/*" #imageInput (change)="onImageSelected($event)" class="hidden">
+  <input 
+    type="file" 
+    id="image" 
+    name="article[image]" 
+    accept="image/*" 
+    #imageInput 
+    (change)="onImageSelected($event)" 
+    class="hidden"
+  >
   <p *ngIf="image_name">{{image_name}}</p>
   <p *ngIf="image_src"><img [src]="image_src" class="w-full max-h-96 object-contain"></p>
   <label for="body_text">Body Text</label>
-  <textarea name="article[body_text]" class="rounded-lg border-2 border-accent h-64"></textarea>
+  <textarea 
+    id="body_text" 
+    formControlName="body_text" 
+    class="rounded-lg border-2 border-accent h-64"
+  ></textarea>
   <button form="article_form" type="submit">Submit</button>
 </form>
