@@ -21,6 +21,12 @@ export class TagService {
       form_data
     )
   }
+
+  deleteTag(id: string) {
+    return this.http.delete(
+      `http://0.0.0.0:3050/tags/${id}`
+    )
+  }
 }
 
 export interface Tag {

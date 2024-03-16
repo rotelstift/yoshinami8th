@@ -2,7 +2,7 @@
 
 <article class="grid grid-flow-row gap-xs p-sm [&_i]:size-5 [&_i]:align-text-bottom">
   <p *ngFor="let tag of tags">
-    {{tag.name}} : {{tag.slug}} <i class="icon-trash"></i>
+    {{tag.name}} : {{tag.slug}} <i (click)="deleteTag(tag.id)" class="icon-trash"></i>
   </p>
 </article>
 
