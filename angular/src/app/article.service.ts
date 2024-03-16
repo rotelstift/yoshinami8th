@@ -9,10 +9,17 @@ export class ArticleService {
 
   constructor(private http: HttpClient) { }
 
-  postArticleFormData(formData: FormData) {
+  postArticleFormData(form_data: FormData) {
     return this.http.post(
       'http://0.0.0.0:3050/api/articles',
-      formData
+      form_data
+    )
+  }
+
+  updateArticleData(id: string, form_data: FormData) {
+    return this.http.put(
+      `http://0.0.0.0/api/articles/${id}`,
+      form_data
     )
   }
 

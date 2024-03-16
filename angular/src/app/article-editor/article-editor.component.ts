@@ -43,6 +43,9 @@ export class ArticleEditorComponent {
             console.log(`${key}: ${this.article_data[key as keyof Article]}`)
             this.article_form.get(key)?.setValue(this.article_data[key as keyof Article])
           }
+          if (this.article_data['image_url']) {
+            this.image_src = this.article_data['image_url']
+          }
         },
         error: (error) => console.error(error),
         complete: () => {
