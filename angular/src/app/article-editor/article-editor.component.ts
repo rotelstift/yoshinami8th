@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ArticleService } from '../article.service';
+import { ArticleService, Article } from '../article.service';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
@@ -15,6 +15,8 @@ export class ArticleEditorComponent {
   image_name: string | undefined
   image_src: string | ArrayBuffer | null = ''
 
+  article_data: Article | null = null
+
   constructor(
     private articleService: ArticleService,
     private router: Router,
@@ -25,7 +27,12 @@ export class ArticleEditorComponent {
     this.entity_status = this.route.snapshot.paramMap.get('entityStatus')
     if (this.entity_status && /^\d+$/.test(this.entity_status)) {
       this.articleService.getArticleData(this.entity_status).subscribe({
-        next: (response) => console.log(response),
+        next: (response) => {
+          this.article_data = response
+          for (const key in this.article_data) {
+            console.log(`${key}: ${this.article_data[key as keyof Article]}`)
+          }
+        },
         error: (error) => console.error(error),
         complete: () => {
           console.log('complete')
