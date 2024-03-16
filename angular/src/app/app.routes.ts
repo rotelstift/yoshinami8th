@@ -3,11 +3,13 @@ import { HelloComponent } from './hello/hello.component';
 import { ArticleEditorComponent } from './article-editor/article-editor.component';
 import { ArticleReaderComponent } from './article-reader/article-reader.component';
 import { GalleryComponent } from './gallery/gallery.component';
+import { TagEditorComponent } from './tag-editor/tag-editor.component';
 
 export const routes: Routes = [
   { path: '', component: ArticleReaderComponent },
   { path: 'hello', component: HelloComponent },
   { path: 'article-edit/:entityStatus', component: ArticleEditorComponent },
   { path: 'article-edit', redirectTo: '/article-edit/new', pathMatch: 'full' },
-  { path: 'gallery', component: GalleryComponent }
+  { path: 'gallery', component: GalleryComponent },
+  { path: 'tags', component: TagEditorComponent }
 ];

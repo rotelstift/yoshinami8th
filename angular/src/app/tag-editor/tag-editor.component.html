@@ -1,1 +1,21 @@
-<p>tag-editor works!</p>
+<article class="grid grid-flow-row gap-sm px-sm">
+  <p *ngFor="let tag of tags">
+    {{tag.name}} : {{tag.slug}}
+  </p>
+</article>
+
+<p *ngFor="let error of errors | keyvalue"
+  class="p-sm text-red-700"
+>
+  {{error.key}} : {{error.value}}
+</p>
+
+<form
+  (submit)="onSubmit($event)"
+  class="grid grid-flow-row gap-sm px-sm">
+  <label for="tag_name">Tag Name</label>
+  <input type="text" id="tag_name" name="tag[name]">
+  <label for="slug">Slug</label>
+  <input type="text" id="slug" name="tag[slug]">
+  <button type="submit">Submit</button>
+</form>
