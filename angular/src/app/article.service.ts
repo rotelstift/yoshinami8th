@@ -18,7 +18,7 @@ export class ArticleService {
 
   updateArticleData(id: string, form_data: FormData) {
     return this.http.put(
-      `http://0.0.0.0/api/articles/${id}`,
+      `http://0.0.0.0:3050/api/articles/${id}`,
       form_data
     )
   }

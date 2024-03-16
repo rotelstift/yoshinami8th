@@ -64,13 +64,27 @@ export class ArticleEditorComponent {
     const form = event.target as HTMLFormElement
     const form_data = new FormData(form)
 
-    this.articleService.postArticleFormData(form_data).subscribe({
-      next: (response) => console.log(response),
+    for (const key in this.article_form.value) {
+      form_data.append(`article[${key}]`, this.article_form.get(key)?.value)
+    }
+
+    if (this.entity_status && /^\d+$/.test(this.entity_status)) {
+      this.articleService.updateArticleData(this.entity_status, form_data).subscribe({
+        next: (response) => console.log(response),
       error: (error) => console.error(error),
       complete: () => {
         this.router.navigate(['/'])
       }
-    })
+      })
+    } else if (this.entity_status == 'new') {
+      this.articleService.postArticleFormData(form_data).subscribe({
+        next: (response) => console.log(response),
+        error: (error) => console.error(error),
+        complete: () => {
+          this.router.navigate(['/'])
+        }
+      })
+    }
   }
 
   selectImage(input: HTMLInputElement): void {
