@@ -1,8 +1,8 @@
 <h2 class="text-xl text-center">Tag Edit</h2>
 
-<article class="grid grid-flow-row gap-xs p-sm">
+<article class="grid grid-flow-row gap-xs p-sm [&_i]:size-5 [&_i]:align-text-bottom">
   <p *ngFor="let tag of tags">
-    {{tag.name}} : {{tag.slug}}
+    {{tag.name}} : {{tag.slug}} <i class="icon-trash"></i>
   </p>
 </article>
 
