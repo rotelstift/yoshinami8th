@@ -2,12 +2,15 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ArticleService, Article } from '../article.service';
 import { ActivatedRoute, Router } from '@angular/router';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-article-editor',
   standalone: true,
-  imports: [CommonModule],
+  imports: [
+    CommonModule,
+    ReactiveFormsModule
+  ],
   templateUrl: './article-editor.component.html',
   styleUrl: './article-editor.component.css'
 })
@@ -36,8 +39,9 @@ export class ArticleEditorComponent {
       this.articleService.getArticleData(this.entity_status).subscribe({
         next: (response) => {
           this.article_data = response
-          for (const key in this.article_data) {
+          for (const key in this.article_form.value) {
             console.log(`${key}: ${this.article_data[key as keyof Article]}`)
+            this.article_form.get(key)?.setValue(this.article_data[key as keyof Article])
           }
         },
         error: (error) => console.error(error),

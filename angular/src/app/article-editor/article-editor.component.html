@@ -1,5 +1,6 @@
 <form 
   id="article_form" 
+  [formGroup]="article_form"
   (submit)="onSubmit($event)" 
   class="grid grid-flow-row gap-xs bg-assort p-sm sm:px-auto"
 >
@@ -7,7 +8,7 @@
   <input 
     type="text" 
     id="title" 
-    name="article[title]" 
+    formControlName="title" 
     class="rounded-lg border-2 border-accent text-2xl"
   >
   <label for="image">Image</label>
@@ -25,8 +26,8 @@
   <p *ngIf="image_src"><img [src]="image_src" class="w-full max-h-96 object-contain"></p>
   <label for="body_text">Body Text</label>
   <textarea 
-    name="article[body_text]" 
     id="body_text" 
+    formControlName="body_text" 
     class="rounded-lg border-2 border-accent h-64"
   ></textarea>
   <button form="article_form" type="submit">Submit</button>
