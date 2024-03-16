@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ArticleService } from '../article.service';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-article-editor',
@@ -11,13 +11,32 @@ import { Router } from '@angular/router';
   styleUrl: './article-editor.component.css'
 })
 export class ArticleEditorComponent {
+  entity_status: string | null = null
   image_name: string | undefined
   image_src: string | ArrayBuffer | null = ''
 
   constructor(
     private articleService: ArticleService,
-    private router: Router
+    private router: Router,
+    private route: ActivatedRoute
   ) {}
+
+  ngOnInit() {
+    this.entity_status = this.route.snapshot.paramMap.get('entityStatus')
+    if (this.entity_status && /^\d+$/.test(this.entity_status)) {
+      this.articleService.getArticleData(this.entity_status).subscribe({
+        next: (response) => console.log(response),
+        error: (error) => console.error(error),
+        complete: () => {
+          console.log('complete')
+        }
+      })
+    } else if (this.entity_status == 'new') {
+      console.log('new article')
+    } else {
+      this.router.navigate(['/'])
+    }
+  }
 
   submitArticle(event: Event) {
     event.preventDefault()

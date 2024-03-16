@@ -24,7 +24,7 @@ export class ArticleService {
 
   getArticleData(id: string): Observable<Article> {
     return this.http.get<Article>(
-      `http://0.0.0.0:3050/api/article/${id}`
+      `http://0.0.0.0:3050/api/articles/${id}`
     )
   }
 }
