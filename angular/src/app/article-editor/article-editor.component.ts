@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ArticleService, Article } from '../article.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-article-editor',
@@ -16,6 +17,12 @@ export class ArticleEditorComponent {
   image_src: string | ArrayBuffer | null = ''
 
   article_data: Article | null = null
+
+  article_form = new FormGroup({
+    title: new FormControl<string>(''),
+    body_text: new FormControl<string>('')
+  })
+  selected_image: File | null = null
 
   constructor(
     private articleService: ArticleService,
@@ -45,7 +52,7 @@ export class ArticleEditorComponent {
     }
   }
 
-  submitArticle(event: Event) {
+  onSubmit(event: Event) {
     event.preventDefault()
     const form = event.target as HTMLFormElement
     const form_data = new FormData(form)
