@@ -7,6 +7,6 @@
   <p *ngIf="image_name">{{image_name}}</p>
   <p *ngIf="image_src"><img [src]="image_src" class="w-full max-h-96 object-contain"></p>
   <label for="body_text">Body Text</label>
-  <textarea name="article[body_text]" class="rounded-lg border-2 border-accent h-64"></textarea>
+  <textarea name="article[body_text]" id="body_text" class="rounded-lg border-2 border-accent h-64"></textarea>
   <button form="article_form" type="submit">Submit</button>
 </form>
