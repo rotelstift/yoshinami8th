@@ -7,6 +7,7 @@ import { GalleryComponent } from './gallery/gallery.component';
 export const routes: Routes = [
   { path: '', component: ArticleReaderComponent },
   { path: 'hello', component: HelloComponent },
-  { path: 'article-edit', component: ArticleEditorComponent },
+  { path: 'article-edit/:id', component: ArticleEditorComponent },
+  { path: 'article-edit', redirectTo: '/article-edit/new', pathMatch: 'full' },
   { path: 'gallery', component: GalleryComponent }
 ];
