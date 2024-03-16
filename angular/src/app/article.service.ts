@@ -21,6 +21,12 @@ export class ArticleService {
       'http://0.0.0.0:3050/api/articles'
     )
   }
+
+  getArticleData(id: string): Observable<Article> {
+    return this.http.get<Article>(
+      `http://0.0.0.0:3050/api/article/${id}`
+    )
+  }
 }
 
 export interface Article {
