@@ -75,6 +75,8 @@ export class ArticleEditorComponent {
       form_data.append(`article[${key}]`, this.article_form.get(key)?.value)
     }
 
+    // タグのチェックが全て外されたときに article[tag_ids][] がなくなってしまうため
+    // タグのチェックを全て外せない不具合が発生するので、それへの対応
     if (form_data.get('article[tag_ids][]') === null) {
       form_data.append('article[tag_ids][]', '')
     }
