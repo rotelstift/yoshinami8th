@@ -108,8 +108,11 @@ export class ArticleEditorComponent {
     }
   }
 
-  tagFormName(id: number) {
-    return `tag[${String(id)}]`
+  tagChecked(id: number): boolean {
+    if (!this.article_data) {
+      return false
+    }
+    return this.article_data['taggings'].some(value => value.tag_id === id)
   }
 
   tagFormId(slug: string) {

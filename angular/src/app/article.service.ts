@@ -39,6 +39,7 @@ export class ArticleService {
 export interface Article {
   id: number,
   title: string,
+  taggings: Array<{tag_id: number}>,
   body_text: string,
   image_url: string,
   created_at: string,
