@@ -11,6 +11,31 @@
     formControlName="title" 
     class="rounded-lg border-2 border-accent text-2xl"
   >
+  <p>Tags</p>
+  <ul>
+    <li *ngFor="let tag of tags">
+      <label [for]="tagFormId(tag.slug)">
+        <!-- ngIF で checked がついてる input とついてない input を出し分けている -->
+        <input 
+          type="checkbox" 
+          [id]="tagFormId(tag.slug)" 
+          name="article[tag_ids][]" 
+          [value]="tag.id"
+          *ngIf="tagChecked(tag.id)"
+          checked
+        >
+        <input 
+          type="checkbox" 
+          [id]="tagFormId(tag.slug)" 
+          name="article[tag_ids][]" 
+          [value]="tag.id"
+          *ngIf="!tagChecked(tag.id)"
+        >
+        {{tag.name}}
+      </label>
+    </li>
+  </ul>
+  <p class="text-right"><a href="/tags">タグ編集</a></p>
   <label for="image">Image</label>
   <button form="image" (click)="selectImage(imageInput)">ファイルを選択</button>
   <input 

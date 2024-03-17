@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { ArticleService, Article } from '../article.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { Tag, TagService } from '../tag.service';
+import { lastValueFrom } from 'rxjs';
 
 @Component({
   selector: 'app-article-editor',
@@ -20,6 +22,7 @@ export class ArticleEditorComponent {
   image_src: string | ArrayBuffer | null = ''
 
   article_data: Article | null = null
+  tags: Tag[] = []
 
   article_form = new FormGroup({
     title: new FormControl<string>(''),
@@ -29,12 +32,16 @@ export class ArticleEditorComponent {
 
   constructor(
     private articleService: ArticleService,
+    private tagService: TagService,
     private router: Router,
     private route: ActivatedRoute
   ) {}
 
   ngOnInit() {
     this.entity_status = this.route.snapshot.paramMap.get('entityStatus')
+    lastValueFrom(this.tagService.getAllTags()).then(response => {
+      this.tags = response
+    })
     if (this.entity_status && /^\d+$/.test(this.entity_status)) {
       this.articleService.getArticleData(this.entity_status).subscribe({
         next: (response) => {
@@ -68,6 +75,12 @@ export class ArticleEditorComponent {
       form_data.append(`article[${key}]`, this.article_form.get(key)?.value)
     }
 
+    // タグのチェックが全て外されたときに article[tag_ids][] がなくなってしまうため
+    // タグのチェックを全て外せない不具合が発生するので、それへの対応
+    if (form_data.get('article[tag_ids][]') === null) {
+      form_data.append('article[tag_ids][]', '')
+    }
+
     if (this.entity_status && /^\d+$/.test(this.entity_status)) {
       this.articleService.updateArticleData(this.entity_status, form_data).subscribe({
         next: (response) => console.log(response),
@@ -99,5 +112,16 @@ export class ArticleEditorComponent {
       reader.readAsDataURL(image.files[0])
       this.image_name = image.files[0].name
     }
+  }
+
+  tagChecked(id: number): boolean {
+    if (!this.article_data) {
+      return false
+    }
+    return this.article_data['taggings'].some(value => value.tag_id === id)
+  }
+
+  tagFormId(slug: string) {
+    return `tag_${slug}`
   }
 }

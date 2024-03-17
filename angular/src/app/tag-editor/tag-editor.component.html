@@ -1,9 +1,13 @@
 <h2 class="text-xl text-center">Tag Edit</h2>
 
 <article class="grid grid-flow-row gap-xs p-sm [&_i]:size-5 [&_i]:align-text-bottom">
-  <p *ngFor="let tag of tags">
-    {{tag.name}} : {{tag.slug}} <i (click)="deleteTag(tag.id)" class="icon-trash"></i>
-  </p>
+  <table>
+    <thead><th>Tag Name</th><th>Slug</th><th>Delete</th></thead>
+    <tr *ngFor="let tag of tags" class="[&_td]:text-center">
+      <td>{{tag.name}}</td><td>{{tag.slug}}</td>
+      <td><i (click)="deleteTag(tag.id)" class="icon-trash"></i></td>
+    </tr>
+  </table>
 </article>
 
 <article class="grid grid-flow-row gap-xs p-sm">

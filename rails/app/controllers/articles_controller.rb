@@ -10,7 +10,7 @@ class ArticlesController < ApplicationController
 
   # GET /articles/1
   def show
-    render json: @article, methods: [:image_url]
+    render json: @article.as_json(include: {taggings: {only: :tag_id}}), methods: [:image_url]
   end
 
   # POST /articles
@@ -46,6 +46,6 @@ class ArticlesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def article_params
-      params.require(:article).permit(:title, :image, :body_text)
+      params.require(:article).permit(:title, :image, :body_text, tag_ids: [])
     end
 end
