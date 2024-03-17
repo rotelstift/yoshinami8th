@@ -12,6 +12,6 @@ export const routes: Routes = [
   { path: 'article-edit/:entityStatus', component: ArticleEditorComponent },
   { path: 'article-edit', redirectTo: '/article-edit/new', pathMatch: 'full' },
   { path: 'gallery', component: GalleryComponent },
-  { path: 'info', component: InformationComponent },
+  { path: 'information', component: InformationComponent },
   { path: 'tags', component: TagEditorComponent }
 ];
