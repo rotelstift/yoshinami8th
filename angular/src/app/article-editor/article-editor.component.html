@@ -15,7 +15,7 @@
   <ul>
     <li *ngFor="let tag of tags">
       <label [for]="tagFormId(tag.slug)">
-        <input type="checkbox" [id]="tagFormId(tag.slug)" name="tags" [value]="tag.id">{{tag.name}}
+        <input type="checkbox" [id]="tagFormId(tag.slug)" name="article[tag_ids][]" [value]="tag.id">{{tag.name}}
       </label>
     </li>
   </ul>
