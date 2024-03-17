@@ -3,7 +3,7 @@ class ArticlesController < ApplicationController
 
   # GET /articles
   def index
-    @articles = Article.all.order(id: "DESC")
+    @articles = Article.with_attached_image.all.order(id: "DESC")
 
     render json: @articles, methods: [:image_url]
   end
