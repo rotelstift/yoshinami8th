@@ -16,7 +16,7 @@ export class GalleryComponent {
   constructor(private articleService: ArticleService) {}
 
   ngOnInit() {
-    this.articleService.getAllArticleData().subscribe({
+    this.articleService.getListedArticleData('gallery').subscribe({
       next: (response) => {
         console.log(response)
         this.articles = response

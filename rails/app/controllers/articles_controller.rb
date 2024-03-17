@@ -15,12 +15,12 @@ class ArticlesController < ApplicationController
       .where(tags: { slug: params[:slug] })
       .order(id: "DESC")
 
-    render json: @articles.as_json, methods: [:image_url]
+    render json: @articles, methods: [:image_url]
   end
 
   # GET /articles/1
   def show
-    render json: @article.as_json(include: {taggings: {only: :tag_id}}), methods: [:image_url]
+    render json: @article.as_json(include: {taggings: {only: :tag_id}}, methods: [:image_url])
   end
 
   # POST /articles
