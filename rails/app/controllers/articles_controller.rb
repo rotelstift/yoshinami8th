@@ -8,6 +8,16 @@ class ArticlesController < ApplicationController
     render json: @articles, methods: [:image_url]
   end
 
+  # GET /list/:slug
+  def list
+    @articles = Article.with_attached_image
+      .joins(:tags)
+      .where(tags: { slug: params[:slug] })
+      .order(id: "DESC")
+
+    render json: @articles.as_json, methods: [:image_url]
+  end
+
   # GET /articles/1
   def show
     render json: @article.as_json(include: {taggings: {only: :tag_id}}), methods: [:image_url]

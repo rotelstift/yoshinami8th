@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
   resources :tags
   scope :api do
-    resources :articles
+    resources :articles, expect: :list
   end
+
+  get "/list/:slug" => "articles#list"
+
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   get '/' => "hello#index"
