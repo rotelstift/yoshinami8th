@@ -11,6 +11,14 @@
     formControlName="title" 
     class="rounded-lg border-2 border-accent text-2xl"
   >
+  <p>Tags</p>
+  <ul>
+    <li *ngFor="let tag of tags">
+      <label [for]="tagFormId(tag.slug)">
+        <input type="checkbox" [id]="tagFormId(tag.slug)" name="tags" [value]="tag.id">{{tag.name}}
+      </label>
+    </li>
+  </ul>
   <label for="image">Image</label>
   <button form="image" (click)="selectImage(imageInput)">ファイルを選択</button>
   <input 
