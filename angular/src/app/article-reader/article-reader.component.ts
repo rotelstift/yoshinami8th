@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ArticleService, Article } from '../article.service';
 import { LazyLoadImageDirective } from '../lazy-load-image.directive';
@@ -18,6 +18,8 @@ import { AdminLinkComponent } from '../admin-link/admin-link.component';
   styleUrl: './article-reader.component.css'
 })
 export class ArticleReaderComponent {
+  @Input() import_articles: Article[] | null = null
+
   articles: Article[] = []
 
   constructor(
@@ -25,13 +27,18 @@ export class ArticleReaderComponent {
   ) {}
 
   ngOnInit() {
-    this.articleService.getAllArticleData().subscribe({
-      next: (response) => {
-        console.log(response)
-        this.articles = response
-      },
-      error: (error) => console.error(error),
-      complete: () => console.log('complete')
-    })
+    if (this.import_articles) {
+      this.articles = this.import_articles
+      console.log(this.articles)
+    } else {
+      this.articleService.getAllArticleData().subscribe({
+        next: (response) => {
+          console.log(response)
+          this.articles = response
+        },
+        error: (error) => console.error(error),
+        complete: () => console.log('complete')
+      })
+    }
   }
 }

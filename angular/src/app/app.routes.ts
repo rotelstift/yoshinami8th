@@ -4,6 +4,7 @@ import { ArticleEditorComponent } from './article-editor/article-editor.componen
 import { ArticleReaderComponent } from './article-reader/article-reader.component';
 import { GalleryComponent } from './gallery/gallery.component';
 import { TagEditorComponent } from './tag-editor/tag-editor.component';
+import { InformationComponent } from './information/information.component';
 
 export const routes: Routes = [
   { path: '', component: ArticleReaderComponent },
@@ -11,5 +12,6 @@ export const routes: Routes = [
   { path: 'article-edit/:entityStatus', component: ArticleEditorComponent },
   { path: 'article-edit', redirectTo: '/article-edit/new', pathMatch: 'full' },
   { path: 'gallery', component: GalleryComponent },
+  { path: 'info', component: InformationComponent },
   { path: 'tags', component: TagEditorComponent }
 ];
