@@ -8,7 +8,7 @@ class ArticlesController < ApplicationController
     render json: @articles, methods: [:image_url]
   end
 
-  # GET /list/:slug
+  # GET /articles/:slug
   def list
     @articles = Article.with_attached_image
       .joins(:tags)
