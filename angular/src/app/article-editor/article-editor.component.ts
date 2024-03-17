@@ -75,6 +75,10 @@ export class ArticleEditorComponent {
       form_data.append(`article[${key}]`, this.article_form.get(key)?.value)
     }
 
+    if (form_data.get('article[tag_ids][]') === null) {
+      form_data.append('article[tag_ids][]', '')
+    }
+
     if (this.entity_status && /^\d+$/.test(this.entity_status)) {
       this.articleService.updateArticleData(this.entity_status, form_data).subscribe({
         next: (response) => console.log(response),
