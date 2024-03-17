@@ -29,6 +29,12 @@ export class ArticleService {
     )
   }
 
+  getListedArticleData(slug: string) {
+    return this.http.get<Article[]>(
+      `http://0.0.0.0:3050/api/articles/${slug}`
+    )
+  }
+
   getArticleData(id: string): Observable<Article> {
     return this.http.get<Article>(
       `http://0.0.0.0:3050/api/articles/${id}`
