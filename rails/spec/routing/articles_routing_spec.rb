@@ -10,6 +10,10 @@ RSpec.describe ArticlesController, type: :routing do
       expect(get: "/articles/1").to route_to("articles#show", id: "1")
     end
 
+    it "routes to #list" do
+      expect(get: "/articles/test").to route_to("articles#list", slug: "test")
+    end
+
 
     it "routes to #create" do
       expect(post: "/articles").to route_to("articles#create")
