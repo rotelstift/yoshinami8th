@@ -12,4 +12,4 @@ RUN npm install -g @angular/cli
 
 ADD . $APP_HOME
 
-EXPOSE 4200
+EXPOSE 4200 9876
