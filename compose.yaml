@@ -11,6 +11,17 @@ services:
     environment:
       - NODE_ENV=development
 
+  front_test:
+    build: ./angular
+    container_name: front_test
+    command: ng test
+    ports:
+      - '9876:9876'
+    volumes:
+      - ./angular:/app
+    environment:
+      - NODE_ENV=development
+
   backend:
     build: ./rails
     container_name: backend
