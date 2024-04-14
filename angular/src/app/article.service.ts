@@ -11,33 +11,33 @@ export class ArticleService {
 
   postArticleFormData(form_data: FormData) {
     return this.http.post(
-      'http://0.0.0.0:3050/api/articles',
+      'http://0.0.0.0:3050/articles',
       form_data
     )
   }
 
   updateArticleData(id: string, form_data: FormData) {
     return this.http.put(
-      `http://0.0.0.0:3050/api/articles/${id}`,
+      `http://0.0.0.0:3050/articles/${id}`,
       form_data
     )
   }
 
   getAllArticleData(): Observable<Article[]> {
     return this.http.get<Article[]>(
-      'http://0.0.0.0:3050/api/articles'
+      'http://0.0.0.0:3050/articles'
     )
   }
 
   getListedArticleData(slug: string) {
     return this.http.get<Article[]>(
-      `http://0.0.0.0:3050/api/articles/${slug}`
+      `http://0.0.0.0:3050/articles/${slug}`
     )
   }
 
   getArticleData(id: string): Observable<Article> {
     return this.http.get<Article>(
-      `http://0.0.0.0:3050/api/articles/${id}`
+      `http://0.0.0.0:3050/articles/${id}`
     )
   }
 }
